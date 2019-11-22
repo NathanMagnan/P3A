@@ -507,3 +507,4 @@ plt.show()
 print(m.sqrt((X_all_forces[-1] - X_all_planets[-1])**2 + (Y_all_forces[-1] - Y_all_planets[-1])**2 + (Z_all_forces[-1] - Z_all_planets[-1])**2))
 
 ## Différence entre le pootentiel de Yukawa et le potentiel de Newton
+#test
