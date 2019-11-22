@@ -110,6 +110,38 @@ class Force_Vent(Force):
         self.zpp = F * relative_velocity_z / (self.sat.masse * relative_velocity)
         return (None)
 
+class Yukawa_Force(Force):
+    
+    def __init__(self, n_body):
+        self.mu = [2.2032 * 10**(13), 3.24859 * 10**(14), 3.986004418 * 10**(14), 4.282837 * 10**(13), 1.26686534 * 10**(17), 3.7931187 * 10**(16), 5.793939 * 10**(15), 6.836529 *          10**(15), 8.71 * 10**(11), 1.32712440018 * 10**(20)] # m^3 / s^2
+        self.n_body = n_body
+        self.alpha= 10**(-4) ## Entre 10 -4 et 10-6  mais essayer avec un alpha de lordre de 1 pour etre sur que tout est bien 
+        self.lambdaa = 10 ## doit etre de lordre de r
+    
+    def calculate(self, V, t):
+        t_day = t / 86400 # day
+        x, y, z, xp, yp , zp = V
+        position_attractor = kernel[0, self.n_body].compute(t_day)
+        x_attractor, y_attractor, z_attractor = position_attractor * 1000 # m
+        
+        d_attractor = m.sqrt((x - x_attractor)**2 + (y - y_attractor)**2 + (z - z_attractor)**2)
+        F= -self.mu[self.n_body-1]*(r**(-2)+self.alpha*(math.exp(-d_attractor / self.lambdaa))*(1/(d_attractor)**2+1/(d_attractor * self.lambdaa))
+        
+        if (x - x_attractor) > 0 :
+            theta = m.atan((y - y_attractor) / (x - x_attractor))
+        elif (x - x_attractor) < 0 :
+            theta = m.atan((y - y_attractor) / (x - x_attractor)) + m.pi
+        elif (y - y_attractor) >= 0 :
+            theta = m.pi / 2
+        else :
+            theta = - m.pi /2
+        phi = m.atan((z - z_attractor)/(m.sqrt((x - x_attractor)**2 + (y - y_attractor)**2)))
+        
+        self.zpp = F * m.sin(phi)
+        self.ypp = F * m.sin(theta) * m.cos(phi) 
+        self.xpp = F * m.cos(theta) * m.cos(phi)
+        return(None)
+        
 ## Propagateur
 def propagateur(V, t, Forces, useless_arg):
     x, y, z, xp, yp, zp = V
