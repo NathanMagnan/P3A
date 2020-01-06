@@ -201,15 +201,15 @@ class Orbit_model():
         return "To Be Done : __str__ for class Orbit_model"
     
     def save(self):
-        np.asarray(self.X).tofile(str(self.target) + "_X")
-        np.asarray(self.Y).tofile(str(self.target) + "_Y")
-        np.asarray(self.Z).tofile(str(self.target) + "_Z")
+        np.savetxt(str(self.target) + "_X", self.X)
+        np.savetxt(str(self.target) + "_Y", self.Y)
+        np.savetxt(str(self.target) + "_Z", self.Z)
         return
     
     def load(self):
-        self.X = np.fromfile(str(self.target) + "_X")
-        self.Y = np.fromfile(str(self.target) + "_Y")
-        self.Z = np.fromfile(str(self.target) + "_Z")
+        self.X = np.loadtxt(str(self.target) + "_X")
+        self.Y = np.loadtxt(str(self.target) + "_Y")
+        self.Z = np.loadtxt(str(self.target) + "_Z")
         if len(self.X) != len(self.t) :
             print("Error : the target files does not match the model start and end date")
             return
