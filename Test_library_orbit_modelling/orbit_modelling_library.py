@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from scipy import integrate
 from jplephem.spk import SPK
 from astropy.time import Time, TimeDelta
-kernel = SPK.open('C:/Users/Nathan/Documents/Pyzo_Workspace/de430.bsp') # To be adapted to one's computer
+kernel = SPK.open(r'/users/eleves-a/2017/nathan.magnan/Desktop/Repository_P3A/de430.bsp') # To be adapted to one's computer
 
 ## Code
 class Satellite:
@@ -225,6 +225,4 @@ class Orbit_model():
         solution = integrate.odeint(propagator, self.V0, self.t, args = (self.Forces, 2), printmessg = True, rtol = 10**(-11), hmax = 1, h0 = 1)
         self.X, self.Y, self.Z = solution[:, 0], solution[:, 1], solution[:, 2]
         self.save()
-        return
-    
-        
+        return    

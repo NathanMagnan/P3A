@@ -1,0 +1,7 @@
+#!/bin/sh
+#SBATCH --job-name=myrun
+#SBATCH --output=report
+#SBATCH --partition=SallesInfo
+#SBATCH --ntasks=25
+
+/usr/local/anaconda3/bin/mpirun -np 25 /usr/local/anaconda3/bin/python /users/eleves-a/2017/nathan.magnan/Desktop/Repository_P3A/Development_chi2_calculation_algorithm.py

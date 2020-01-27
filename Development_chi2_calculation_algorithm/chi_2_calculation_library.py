@@ -36,28 +36,6 @@ def chi_2(observation, model, delta_radar, delta_accelerometer, delta_initial_po
     return chi_2
 
 ## Data generation
-def observations_data_generation(time_isot_start, time_isot_end, n_points_t, 
-                                      lambda_start, lambda_end, n_points_lambda, 
-                                      alpha_start, alpha_end, n_points_alpha, 
-                                      target_files, 
-                                      Bodies = [i + 1 for i in range(10)], radiation = False, solar_wind = False, 
-                                      reflectivity_sat = 0.5, radius_sat = 0.63, mass_sat = 100, plasma_speed = 450000):
-    Lambda = [lambda_start + (lambda_end - lambda_start) * i / (n_points_lambda - 1) for i in range(n_points_lambda)]
-    Alpha = [alpha_start + (alpha_end - alpha_start) * i / (n_points_alpha - 1) for i in range(n_points_alpha)]
-    
-    N = n_points_lambda*n_points_alpha
-    print(N)
-    
-    i = 0
-    print(100 * i / (N - 1))
-    for lambdaa in Lambda:
-        for alpha in Alpha:
-            i += 1
-            target_file = target_files + "_lambda_=_" + str(lambdaa) + "_alpha_=_" + str(alpha)
-            observation = orbit.Orbit_model(time_isot_start, time_isot_end, n_points_t, target_file, Bodies, "Yukawa", alpha, lambdaa, radiation, solar_wind, reflectivity_sat, radius_sat, mass_sat, plasma_speed)
-            observation.compute()
-            print(100 * i / N) # gives the pourcentage of the computation that has already been done
-
 def model_data_generation(time_isot_start, time_isot_end, n_points_t, target_files, 
                           Bodies = [i + 1 for i in range(10)], type = "Yukawa", alpha = 10**(-4), lambdaa = 10**12, 
                           radiation = False, solar_wind = False, 
