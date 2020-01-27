@@ -13,7 +13,7 @@ def Kp():
         return 0.5*(ma.sin(b))**2*(1-m*(ma.sin(b))**2)**(-1.5)
 
 
-    m=np.linspace(0,1,1000,endpoint=False)
+    m=np.linspace(0,1,100000,endpoint=False)
 
     def K_p(m):
         if (m>= 1):
@@ -33,7 +33,7 @@ def Ep():
     def e(b,m):
         return -0.5*(ma.sin(b))**2*(1-m*(ma.sin(b))**2)**(-0.5)
 
-    m=np.linspace(0,1,1000,endpoint=False)
+    m=np.linspace(0,1,100000,endpoint=False)
 
     def E_p(m):
         if (m>= 1):
@@ -46,12 +46,12 @@ def Ep():
 
     return l
 
-m=np.linspace(0,1,1000,endpoint=False)
+m=np.linspace(0,1,100000,endpoint=False)
 
 def save(m,Kp,Ep):
-    np.savetxt("Abaques_m",m)
-    np.savetxt("Abaques_Kp",Kp)
-    np.savetxt("Abaques_Ep",Ep)
+    np.savetxt("Abacus_m",m)
+    np.savetxt("Abacus_Kp",Kp)
+    np.savetxt("Abacus_Ep",Ep)
     return
 
 save(m,Kp(),Ep())
