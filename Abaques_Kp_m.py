@@ -21,7 +21,7 @@ def Kp():
         return sc.quad(k,0,ma.pi/2,args=(m))[0]
 
     l=list()
-    for i in range (len(m)-1):
+    for i in range (len(m)):
         l.append(K_p(m[i]))
 
 
@@ -30,10 +30,10 @@ def Kp():
 
 
 def Ep():
-    def e(m,b):
+    def e(b,m):
         return -0.5*(ma.sin(b))**2*(1-m*(ma.sin(b))**2)**(-0.5)
 
-    m=np.linspace(0,0.9,10000,endpoint=False)
+    m=np.linspace(0,1,1000,endpoint=False)
 
     def E_p(m):
         if (m>= 1):
@@ -41,16 +41,17 @@ def Ep():
         return sc.quad(e,0,ma.pi/2,args=(m))[0]
 
     l=list()
-    for i in range (len(m)-1):
+    for i in range (len(m)):
         l.append(E_p(m[i]))
 
     return l
 
 m=np.linspace(0,1,1000,endpoint=False)
 
-def save(m,K_p):
+def save(m,Kp,Ep):
     np.savetxt("Abaques_m",m)
-    np.savetxt("Abaques_Kp",K_p)
+    np.savetxt("Abaques_Kp",Kp)
+    np.savetxt("Abaques_Ep",Ep)
     return
 
-save(m,Kp())
+save(m,Kp(),Ep())
