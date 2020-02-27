@@ -1,0 +1,60 @@
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+srun: error: _server_read: fd 25 error reading header: Connection reset by peer
+srun: error: Aborting, io error and missing step on node 5
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: error: portugal: task 44: Killed
+srun: error: perdrix: task 42: Killed
+srun: error: islande: task 29: Killed
+srun: error: calanthe: task 8: Killed
+srun: error: hibou: task 24: Killed
+slurmstepd: error: *** STEP 951.0 ON albatros CANCELLED AT 2020-02-26T19:28:42 ***
+srun: error: liparis: task 34: Killed
+srun: error: malte: task 37: Killed
+srun: error: hongrie: task 26: Killed
+srun: error: quetzal: task 45: Killed
+srun: error: dindon: task 10: Killed
+srun: error: pologne: task 43: Killed
+srun: error: _server_read: fd 67 error reading header: Connection reset by peer
+srun: error: Aborting, io error and missing step on node 20
+srun: error: faisan: task 16: Killed
+srun: error: linotte: task 33: Killed
+srun: error: angleterre: task 2: Killed
+srun: error: espagne: task 15: Killed
+srun: error: nandou: task 40: Killed
+srun: error: groenland: task 21: Killed
+srun: error: belgique: task 6: Killed
+srun: error: coucou: task 9: Killed
+srun: error: irlande: task 28: Killed
+srun: error: autriche: task 3: Killed
+srun: error: monaco: task 38: Killed
+srun: error: gelinotte: task 19: Killed
+srun: error: epipactis: task 14: Killed
+srun: error: mouette: task 39: Killed
+srun: error: france: task 18: Killed
+srun: error: jabiru: task 31: Killed
+srun: error: albatros: task 0: Killed
+srun: error: diuris: task 11: Killed
+srun: error: isotria: task 30: Killed
+srun: error: bengali: task 7: Killed
+srun: error: quiscale: task 46: Killed
+srun: error: epervier: task 13: Killed
+srun: error: kamiche: task 32: Killed
+srun: error: hollande: task 25: Killed
+srun: error: habenaria: task 22: Killed
+srun: error: harpie: task 23: Killed
+srun: error: autruche: task 4: Killed
+srun: error: ombrette: task 41: Killed
+srun: error: loriol: task 36: Killed
+srun: error: finlande: task 17: Killed
+srun: error: encyclia: task 12: Killed
+srun: error: rouloul: task 47: Killed
+srun: error: lituanie: task 35: Killed
+srun: error: ipsea: task 27: Killed
+srun: error: allemagne: task 1: Killed
+srun: error: Timed out waiting for job step to complete
+[mpiexec@aerides.polytechnique.fr] control_cb (pm/pmiserv/pmiserv_cb.c:208): assert (!closed) failed
+[mpiexec@aerides.polytechnique.fr] HYDT_dmxu_poll_wait_for_event (tools/demux/demux_poll.c:76): callback returned error status
+[mpiexec@aerides.polytechnique.fr] HYD_pmci_wait_for_completion (pm/pmiserv/pmiserv_pmci.c:198): error waiting for event
+[mpiexec@aerides.polytechnique.fr] main (ui/mpich/mpiexec.c:340): process manager error waiting for completion
