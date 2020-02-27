@@ -1,0 +1,79 @@
+Traceback (most recent call last):
+  File "/users/eleves-a/2017/nathan.magnan/Desktop/Repository_P3A/Development_chi2_calculation_algorithm/chi_2_calculation_library_mpi.py", line 43, in <module>
+    model = orbit.Orbit_model(time_isot_start, time_isot_end, n_points_t, target_file, Bodies, "Newton", alpha, lambdaa, radiation, solar_wind, reflectivity_sat, radius_sat, mass_sat, plasma_speed)
+NameError: name 'alpha' is not defined
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)
+WARNING: ErfaWarning: ERFA function "dtf2d" yielded 2 of "dubious year (Note 6)" [astropy._erfa.core]
+/usr/local/anaconda3/lib/python3.6/site-packages/scipy/integrate/odepack.py:221: ODEintWarning: Integration successful.
+  warnings.warn(warning_msg, ODEintWarning)

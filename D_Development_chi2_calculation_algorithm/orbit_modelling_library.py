@@ -2,12 +2,12 @@
 import math as m
 import numpy as np
 import scipy.constants as constants
-import scipy.interpolate as inter
+import scipy.special as specials
 import matplotlib.pyplot as plt
 from scipy import integrate
 from jplephem.spk import SPK
 from astropy.time import Time, TimeDelta
-kernel = SPK.open(r'C:/Users/Nathan/Documents/W - Pyzo_Workspace/de430.bsp') # To be adapted to one's computer
+kernel = SPK.open(r'/users/eleves-a/2017/nathan.magnan/Desktop/Repository_P3A/de430.bsp') # To be adapted to one's computer
 
 ## Code
 class Satellite:
@@ -78,6 +78,62 @@ class Yukawa_Force(Force):
         self.zpp = F * m.sin(phi)
         return(None)
 
+class Kuiper_Newton_Force(Force):
+    
+    def __init__(self):
+        self.mu = 1.97 * 3986004418 * 10**3
+        self.ecliptic_plane_angle_x = (23.4 + 1.86) * 2 * m.pi / 360
+        self.R_center = 45 * constants.au
+        self.R0 = 3 * constants.au
+    
+    def calculate(self, V, t):
+        x, y, z, useless_a, useless_b , useless_c = V
+        xp = x
+        yp = y * m.cos(self.ecliptic_plane_angle_x) + z * m.sin(self.ecliptic_plane_angle_x)
+        zp = -y * m.sin(self.ecliptic_plane_angle_x) + z * m.cos(self.ecliptic_plane_angle_x)
+        rpp = m.sqrt(yp**2 + xp**2)
+        if yp >= 0:
+            thetapp = m.acos(xp / rpp)
+        else :
+            thetapp = - m.acos(xp / rpp)
+        zpp = zp
+        
+        r0 = self.R0 / self.R_center
+        rho = rpp / self.R_center
+        xi = zpp / self.R_center
+        M = (4  * rho) / ((rho + 1)**2 + xi**2)
+        
+        K = specials.ellipk(M)
+        E = specials.ellipe(M)
+        Kp = (K - specials.ellipk(M - 0.000001))/0.000001
+        Ep = (E - specials.ellipe(M - 0.000001))/0.000001
+        
+        U = np.sqrt(M / rho) * (1 - r0**2 / 16)
+        V = - np.sqrt(M / rho) * r0**2 / 16
+        S = (rho**2 + xi**2 - 1) / ((rho + 1)**2 + xi**2)
+        
+        # potentiel = self.mu / (m.pi * self.R_center) * (U * K + V * S * E)
+        
+        Upr = (1 - r0**2 / 16) * (-1) * (1 + rho) * np.sqrt(M / rho) * M / (4 * self.R_center * rho)
+        Vpr = - r0**2 / 16 * (-1) * (1 + rho) * np.sqrt(M / rho) * M / (4 * self.R_center * rho)
+        Spr = M / (2 * self.R_center) - (1 + rho) * S * M / (2 * self.R_center * rho)
+        dm_dr = (M - (1 + rho) * M**2 / 2) / (self.R_center * rho)
+        Krpp = (Upr * K + U * Kp * dm_dr + Vpr * S * E + V * Spr * E + V * S * Ep * dm_dr)
+        Krpp *=  self.mu / (m.pi * self.R_center)
+        
+        Upz = (1 - r0**2 / 16) * (-1) * np.sqrt(M / rho) * xi * M / (4 * self.R_center * rho)
+        Vpz = - r0**2 / 16 * (-1) * np.sqrt(M / rho) * xi * M / (4 * self.R_center * rho)
+        Spz = xi * M / (2 * self.R_center * rho) - xi * S * M / (2 * self.R_center * rho)
+        dm_dz = - xi * M**2 / (2 * self.R_center * rho)
+        Kzpp = (Upz * K + U * Kp * dm_dz + Vpz * S * E + V * Spz * E + V * S * Ep * dm_dz)
+        Kzpp *=  self.mu / (m.pi * self.R_center)
+        
+        # Ktethapp = 0
+        self.xpp = m.cos(thetapp) * Krpp
+        self.ypp = m.sin(thetapp) * m.cos(self.ecliptic_plane_angle_x) * Krpp - m.sin(self.ecliptic_plane_angle_x) * Kzpp
+        self.zpp = m.sin(thetapp) * m.sin(self.ecliptic_plane_angle_x) * Krpp + m.cos(self.ecliptic_plane_angle_x) * Kzpp
+        return(None)
+        
 
 class Radiation_Force(Force):
 
@@ -167,6 +223,8 @@ class Orbit_model():
                 self.Forces.append(Yukawa_Force(n_body, alpha, lambdaa))
             else :
                 self.Forces.append(Gravitational_Force(n_body))
+        if (type == "Newton"):
+            self.Forces.append(Kuiper_Newton_Force())
         
         Times_isot = [time_isot_start, time_isot_end]
         T = Time(Times_isot, format = 'isot', scale = 'utc')

@@ -1,0 +1,7 @@
+#!/bin/sh
+#SBATCH --job-name=myrun
+#SBATCH --output=report
+#SBATCH --partition=SallesInfo
+#SBATCH --ntasks=26
+
+/usr/local/anaconda3/bin/mpirun -np 26 /usr/local/anaconda3/bin/python /users/eleves-a/2017/nathan.magnan/Desktop/Repository_P3A/D_Development_chi2_calculation_algorithm/orbit_computations_mpi.py
