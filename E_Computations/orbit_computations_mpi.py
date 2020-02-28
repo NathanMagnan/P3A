@@ -31,7 +31,7 @@ if (rank != n_proc - 1):
     Lambda = [lambda_start * (lambda_end / lambda_start)**(i / (n_points_lambda - 1)) for i in range(n_points_lambda)]
     Alpha = [alpha_start * (alpha_end / alpha_start)**(i / (n_points_alpha - 1)) for i in range(n_points_alpha)]
     lambdaa = Lambda[int(rank // n_points_alpha)]
-    alpha = Alpha[int(rank % n_points_lambda)]
+    alpha = Alpha[int(rank % n_points_alpha)]
     
     # computation of the observations
     target_file = target_files + "_lambda_=_" + str(lambdaa) + "_alpha_=_" + str(alpha)
