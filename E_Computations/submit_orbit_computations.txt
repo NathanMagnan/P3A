@@ -2,6 +2,6 @@
 #SBATCH --job-name=myrun
 #SBATCH --output=report
 #SBATCH --partition=SallesInfo
-#SBATCH --ntasks=577
+#SBATCH --ntasks=289
 
-/usr/local/anaconda3/bin/mpirun -np 577 /usr/local/anaconda3/bin/python /users/eleves-a/2017/nathan.magnan/Desktop/Repository_P3A/E_Computations/orbit_computations_mpi.py
+/usr/local/anaconda3/bin/mpirun -np 289 /usr/local/anaconda3/bin/python /users/eleves-a/2017/nathan.magnan/Desktop/Repository_P3A/E_Computations/orbit_computations_mpi.py
