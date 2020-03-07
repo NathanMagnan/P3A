@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from scipy import integrate
 from jplephem.spk import SPK
 from astropy.time import Time, TimeDelta
-kernel = SPK.open(r'/users/eleves-a/2017/nathan.magnan/Desktop/Repository_P3A/de430.bsp') # To be adapted to one's computer
+kernel = SPK.open(r'C:\Users\Nathan\Documents\W - Pyzo_Workspace/de430.bsp') # To be adapted to one's computer
 
 ## Code
 class Satellite:
